@@ -86,7 +86,7 @@ def generate_junk_file(base_filename="junk_file.bin", block_size=1*1024*1024): #
         print(f"You can delete the generated file '{filename}' to free up space.")
 
 if __name__ == "__main__":
-    confirmation = input(f"This script will fill the disk where it is located. Are you sure you want to continue? (y/n): ")
+    confirmation = input(f"This script will fill the disk where it is located. Are you sure you want to continue? (y/N): ")
     if confirmation.lower() == 'y':
         generate_junk_file()
     else:
