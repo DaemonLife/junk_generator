@@ -57,7 +57,7 @@ def generate_junk_file(base_filename="junk_file.bin", block_size=1*1024*1024): #
 
                     # Check if there is space left for the next block
                     if free < block_size:
-                        print("Недостаточно места для следующего блока. Диск почти заполнен.")
+                        print("No space.")
                         break
 
                     f.write(data_block) # Write the pre-generated block
@@ -66,8 +66,9 @@ def generate_junk_file(base_filename="junk_file.bin", block_size=1*1024*1024): #
 
                 except OSError as e:
                     print(f"Error writing file or checking disk space: {e}")
-                    print("The disk is probably full or an I/O error has occurred. Stopping.")
-                    break
+                    continue
+                    # print("The disk is probably full or an I/O error has occurred. Stopping.")
+                    # break
                 except Exception as e:
                     print(f"An unexpected error occurred: {e}")
                     break
